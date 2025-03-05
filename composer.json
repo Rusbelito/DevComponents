@@ -30,10 +30,14 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\""
+            "@php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\"",
+            "npm install",
+            "npm run build"
         ],
         "post-update-cmd": [
-            "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\""
+            "@php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\"",
+            "npm install",
+            "npm run build"
         ]
     }
 }
