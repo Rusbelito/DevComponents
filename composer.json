@@ -18,7 +18,7 @@
             "name": "Rusbelito"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {},
     "extra": {

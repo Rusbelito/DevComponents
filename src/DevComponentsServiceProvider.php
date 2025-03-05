@@ -22,18 +22,25 @@ class DevComponentsServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot() : void
     {
-            if ($this->app->runningInConsole()) {
-            Artisan::call('vendor:publish', [
-                '--provider' => "Rusbelito\DevComponents\DevComponentsServiceProvider",
-                '--tag' => "vistas"
-            ]);
-        }
-        // Publicar las vistas en el directorio adecuado de Laravel
+
+    $this->loadViewsFrom(__DIR__.'/../resourses/views', 'courierX');
+     $this->publishes([
+
+        __DIR__.'/../resourses/views' => resource_path('views/components'),
+
+    ]);
+
+        $this->loadViewsFrom(__DIR__.'/../Vistas', 'courier');
+
+
         $this->publishes([
-            __DIR__.'/Vistas' => resource_path('views/components'),
-        ], 'vistas');
+
+        __DIR__.'/../Vistas' => resource_path('views/components'),
+
+    ]);
+
     }
 }
 
