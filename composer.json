@@ -6,11 +6,11 @@
     "autoload": {
         "psr-4": {
             "Rusbelito\\DevComponents\\": "src/"
-        },
-        "autoload-dev": {
-            "psr-4": {
-                "Rusbelito\\DevComponents\\Tests\\": "tests/"
-            }
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rusbelito\\DevComponents\\Tests\\": "tests/"
         }
     },
     "authors": [
