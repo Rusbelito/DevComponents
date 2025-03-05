@@ -3,7 +3,7 @@
 namespace Rusbelito\DevComponents;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Blade;
 
 class DevComponentsServiceProvider extends ServiceProvider
 {
