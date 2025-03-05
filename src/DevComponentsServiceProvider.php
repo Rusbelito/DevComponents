@@ -25,22 +25,23 @@ class DevComponentsServiceProvider extends ServiceProvider
     public function boot() : void
     {
 
-    $this->loadViewsFrom(__DIR__.'/../resourses/views', 'courierX');
+    $this->loadViewsFrom(__DIR__.'/resources/views','components');
      $this->publishes([
 
-        __DIR__.'/../resourses/views' => resource_path('views/components'),
+        __DIR__.'/resources/views/components' => resource_path('views/components'),
 
     ]);
 
-        $this->loadViewsFrom(__DIR__.'/../Vistas', 'courier');
+        $this->loadViewsFrom(__DIR__.'/Vistas','components');
 
 
         $this->publishes([
 
-        __DIR__.'/../Vistas' => resource_path('views/components'),
+        __DIR__.'/Vistas' => resource_path('views/components'),
 
     ]);
 
     }
 }
+
 
