@@ -22,7 +22,7 @@
             "Rusbelito\\DevComponents\\DevComponentsServiceProvider"
         ]
     }
-}
+},
     "scripts": {
         "post-install-cmd": [
             "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\" --tag=\"vistas\""
