@@ -1,0 +1,27 @@
+{
+    "name": "rusbelito/dev-components",
+    "version": "1.0.0",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rusbelito\\DevComponents\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rusbelito"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {},
+    "extra": {
+    "laravel": {
+        "providers": [
+            "Rusbelito\\DevComponents\\DevComponentsServiceProvider"
+        ]
+    }
+}
+
+}
