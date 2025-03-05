@@ -25,20 +25,16 @@ class DevComponentsServiceProvider extends ServiceProvider
     public function boot() : void
     {
 
-     $this->loadViewsFrom(__DIR__.'/resources/views/components','Rusbelito');
+        // Cargar vistas desde el directorio de tu paquete
+        $this->loadViewsFrom(__DIR__.'/resources/views/components', 'rusbelito');
 
-     $this->publishes([
-        __DIR__.'/resources/views/components' => resource_path('views/components'),
-    ]);
-
-        $this->loadViewsFrom(__DIR__.'/Vistas','components');
-
-
+        // Publicar vistas para que puedan ser sobrescritas en el proyecto
         $this->publishes([
+            __DIR__.'/resources/views/components' => resource_path('views/components'),
+        ]);
 
-        __DIR__.'/Vistas' => resource_path('views/components'),
-
-    ]);
+        // Registrar el componente Blade para usar la sintaxis <rusbelito:componente />
+        Blade::componentNamespace('Rusbelito\\DevComponents\\Views\\Components', 'rusbelito');
 
     }
 }
