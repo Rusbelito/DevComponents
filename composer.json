@@ -13,7 +13,7 @@
             "name": "Rusbelito"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {},
     "extra": {
@@ -23,5 +23,13 @@
         ]
     }
 }
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\" --tag=\"vistas\""
+        ],
+        "post-update-cmd": [
+            "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\" --tag=\"vistas\""
+        ]
+    }
 
 }
