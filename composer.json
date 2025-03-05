@@ -30,10 +30,10 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\" --tag=\"vistas\""
+            "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\""
         ],
         "post-update-cmd": [
-            "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\" --tag=\"vistas\""
+            "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\""
         ]
     }
 }
