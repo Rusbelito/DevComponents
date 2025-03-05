@@ -6,6 +6,11 @@
     "autoload": {
         "psr-4": {
             "Rusbelito\\DevComponents\\": "src/"
+        },
+        "autoload-dev": {
+            "psr-4": {
+                "Rusbelito\\DevComponents\\Tests\\": "tests/"
+            }
         }
     },
     "authors": [
@@ -23,13 +28,12 @@
             ]
         }
     },
-"scripts": {
-    "post-install-cmd": [
-        "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\" --tag=\"vistas\""
-    ],
-    "post-update-cmd": [
-        "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\" --tag=\"vistas\""
-    ]
-}
-
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\" --tag=\"vistas\""
+        ],
+        "post-update-cmd": [
+            "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\" --tag=\"vistas\""
+        ]
+    }
 }

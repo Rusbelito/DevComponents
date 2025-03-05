@@ -3,6 +3,7 @@
 namespace Rusbelito\DevComponents;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Artisan;
 
 class DevComponentsServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,12 @@ class DevComponentsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+            if ($this->app->runningInConsole()) {
+            Artisan::call('vendor:publish', [
+                '--provider' => "Rusbelito\DevComponents\DevComponentsServiceProvider",
+                '--tag' => "vistas"
+            ]);
+        }
         // Publicar las vistas en el directorio adecuado de Laravel
         $this->publishes([
             __DIR__.'/Vistas' => resource_path('views/components'),
