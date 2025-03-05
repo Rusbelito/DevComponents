@@ -17,19 +17,19 @@
     "prefer-stable": true,
     "require": {},
     "extra": {
-    "laravel": {
-        "providers": [
-            "Rusbelito\\DevComponents\\DevComponentsServiceProvider"
-        ]
-    }
-},
-    "scripts": {
-        "post-install-cmd": [
-            "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\" --tag=\"vistas\""
-        ],
-        "post-update-cmd": [
-            "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\" --tag=\"vistas\""
-        ]
-    }
+        "laravel": {
+            "providers": [
+                "Rusbelito\\DevComponents\\DevComponentsServiceProvider"
+            ]
+        }
+    },
+"scripts": {
+    "post-install-cmd": [
+        "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\" --tag=\"vistas\""
+    ],
+    "post-update-cmd": [
+        "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\" --tag=\"vistas\""
+    ]
+}
 
 }
