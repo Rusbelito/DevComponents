@@ -4,6 +4,7 @@ namespace Rusbelito\DevComponents;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
+use Rusbelito\DevComponents\App\View\Components\Hola;
 
 class DevComponentsServiceProvider extends ServiceProvider
 {
@@ -26,10 +27,22 @@ class DevComponentsServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'dev-components');
 
-        Blade::componentNamespace('App\\View\\Components', 'personalizado');
+        // Lista de componentes del paquete
+        $components = [
+            'alert' => 'dev-components::components.alert',
+            'hola' => Hola::class,
+        ];
 
-        $this->publishes([
-            __DIR__ . '/resources/views/components' => resource_path('views/components'),
+        // Registrar componentes del paquete
+        foreach ($components as $alias => $view) {
+            if (!view()->exists('components.' . $alias)) {
+                Blade::component($view, $alias);
+            }
+        }
+
+         $this->publishes([
+            __DIR__.'/resources/views/components' => resource_path('views/vendor/dev-components/components'),
+            __DIR__.'/resources/views' => resource_path('views'),
         ]);
     }
 }
