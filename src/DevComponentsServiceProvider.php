@@ -31,10 +31,5 @@ class DevComponentsServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/resources/views/components' => resource_path('views/components'),
         ]);
-
     }
-
-
 }
-
-
