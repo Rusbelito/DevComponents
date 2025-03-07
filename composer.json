@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Rusbelito\\DevComponents\\": "src/"
+            "Rusbelito\\DevComponents\\": "src/Providers"
         }
     },
     "autoload-dev": {
