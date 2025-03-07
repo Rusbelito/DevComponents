@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Rusbelito\\DevComponents\\": "src/Providers"
+            "Rusbelito\\DevComponents\\": "src/"
         }
     },
     "autoload-dev": {
@@ -28,7 +28,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Rusbelito\\DevComponents\\DevComponentsServiceProvider"
+                "Rusbelito\\DevComponents\\Providers\\DevComponentsServiceProvider"
             ]
         }
     },
