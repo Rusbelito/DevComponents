@@ -28,20 +28,20 @@ class DevComponentsServiceProvider extends ServiceProvider
 
 
 
-        $compiler = new DevTagCompiler(
-            app('blade.compiler')->getClassComponentAliases(),
-            app('blade.compiler')->getClassComponentNamespaces(),
-            app('blade.compiler')
-        );
-        app()->bind('rusbelito.compiler', fn () => $compiler);
+         $compiler = new DevTagCompiler(
+             app('blade.compiler')->getClassComponentAliases(),
+             app('blade.compiler')->getClassComponentNamespaces(),
+             app('blade.compiler')
+         );
+         app()->bind('rusbelito.compiler', fn () => $compiler);
 
 
-        app('blade.compiler')->precompiler(function ($in) use ($compiler) {
-            return $compiler->compile($in);
-        });
+         app('blade.compiler')->precompiler(function ($in) use ($compiler) {
+             return $compiler->compile($in);
+         });
 
 
-        $this->loadViewsFrom(__DIR__ . '/resources/views', 'rusbelito');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'rusbelito');
 
         // Lista de componentes del paquete
         $components = [
@@ -60,8 +60,9 @@ class DevComponentsServiceProvider extends ServiceProvider
 
 
          $this->publishes([
-            __DIR__.'/resources/views/components' => resource_path('views/vendor/rusbelito/components'),
-            __DIR__.'/resources/views' => resource_path('views'),
+            __DIR__.'/../resources/views/components' => resource_path('views/vendor/rusbelito/components'),
+            __DIR__.'/../resources/views' => resource_path('views'),
         ]);
     }
 }
+
