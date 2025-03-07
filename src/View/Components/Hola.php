@@ -1,6 +1,6 @@
 <?php
 
-namespace Rusbelito\DevComponents\App\View\Components;
+namespace Rusbelito\DevComponents\View\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -21,7 +21,7 @@ class Hola extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('packages.dev-components.src.view.components.hola');
+        return view('rusbelito::components.tabla.carga-tabla');
     }
 }
 

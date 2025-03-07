@@ -1,10 +1,10 @@
 <?php
 
-namespace Rusbelito\DevComponents;
+namespace Rusbelito\DevComponents\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
-use Rusbelito\DevComponents\App\View\Components\Hola;
+use Rusbelito\DevComponents\View\Components\Hola;
 
 class DevComponentsServiceProvider extends ServiceProvider
 {
@@ -25,11 +25,27 @@ class DevComponentsServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->loadViewsFrom(__DIR__ . '/resources/views', 'dev-components');
+
+
+
+        $compiler = new DevTagCompiler(
+            app('blade.compiler')->getClassComponentAliases(),
+            app('blade.compiler')->getClassComponentNamespaces(),
+            app('blade.compiler')
+        );
+        app()->bind('rusbelito.compiler', fn () => $compiler);
+
+
+        app('blade.compiler')->precompiler(function ($in) use ($compiler) {
+            return $compiler->compile($in);
+        });
+
+
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'rusbelito');
 
         // Lista de componentes del paquete
         $components = [
-            'alert' => 'dev-components::components.alert',
+            'alert' => 'rusbelito::components.tabla.carga-tabla',
             'hola' => Hola::class,
         ];
 
@@ -40,8 +56,11 @@ class DevComponentsServiceProvider extends ServiceProvider
             }
         }
 
+        
+
+
          $this->publishes([
-            __DIR__.'/resources/views/components' => resource_path('views/vendor/dev-components/components'),
+            __DIR__.'/resources/views/components' => resource_path('views/vendor/rusbelito/components'),
             __DIR__.'/resources/views' => resource_path('views'),
         ]);
     }
