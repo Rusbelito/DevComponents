@@ -33,6 +33,7 @@
     },
     "scripts": {
         "post-install-cmd": [
+            "ls -al",
             "php artisan vendor:publish --provider=\"Rusbelito\\DevComponents\\DevComponentsServiceProvider\"",
             "npm install",
             "npm run build"
