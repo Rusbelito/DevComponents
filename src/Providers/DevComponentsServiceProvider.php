@@ -84,6 +84,6 @@ class DevComponentsServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../resources/views/components' => resource_path('views/vendor/rusbelito/components'),
             __DIR__ . '/../resources/views' => resource_path('views'),
-        ]);
+        ],'laravel-assets');
     }
 }
